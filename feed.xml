@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title></title>
+    <description>My personal blogging site</description>
+    <link>http://yogendra689.github.io/</link>
+    <atom:link href="http://yogendra689.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 04 Sep 2016 16:36:01 +0530</pubDate>
+    <lastBuildDate>Sun, 04 Sep 2016 16:36:01 +0530</lastBuildDate>
+    <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>Ruby gems for language translations</title>
+        <description>&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Tradsim&lt;/code&gt; is useful for translation between Traditional Chinese and Simplified Chinese.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# traditional to simplified chinese translation&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;Tradsim&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to_sim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;轉街過巷 就如滑過浪潮 聽天說地 仍然剩我心跳&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;转街过巷 就如滑过浪潮 听天说地 仍然剩我心跳&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# simplified to traditional chinese translation&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;Tradsim&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to_trad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;转街过巷 就如滑过浪潮 听天说地 仍然剩我心跳&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;轉街過巷 就如滑過浪潮 聽天說地 仍然剩我心跳&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# guess whether text is traditional, simplified or unknown&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;Tradsim&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;guess&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;轉街過巷 就如滑過浪潮 聽天說地 仍然剩我心跳&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:traditional&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;script_detector&lt;/code&gt; Library for detecting if string is traditional Chinese, simplified Chinese, Japanese or Korean&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;我的氣墊船充滿了鱔魚.&quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;chinese?&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;japanese?&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;false&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Note:  Tradsim only work in UTF-8 encoding, put following at the beginning of the ruby code.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# encoding: UTF-8&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;or&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;#!/usr/bin/env ruby -wKU&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the these gems: &lt;a href=&quot;https://github.com/erinata/tradsim&quot;&gt;Tradsim&lt;/a&gt;, &lt;a href=&quot;https://github.com/jpatokal/script_detector&quot;&gt;Script detector&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 04 Sep 2016 00:00:00 +0530</pubDate>
+        <link>http://yogendra689.github.io/ruby_on_rails/2016/09/04/ruby-gems-for-translations.html</link>
+        <guid isPermaLink="true">http://yogendra689.github.io/ruby_on_rails/2016/09/04/ruby-gems-for-translations.html</guid>
+        
+        
+        <category>ruby_on_rails</category>
+        
+      </item>
+    
+      <item>
+        <title>One gmail id trick</title>
+        <description>&lt;p&gt;Gmail ignores period(.) and any random text written after + in email-address ( before @ ). This helps to use same email address for various purposes.&lt;/p&gt;
+
+&lt;p&gt;For example,
+Any of the following email addresses will point to your primary address &lt;code class=&quot;highlighter-rouge&quot;&gt;Exampleorg@gmail.com&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Example.org@gmail.com
+Example.o.r.g@gmail.com
+Ex.ample.org@gmail.com
+Exampleorg+randomtext@gmail.com
+Example.org@googlemail.com
+Example.o.r.g@googlemail.com
+Ex.ample.org@googlemail.com
+Exampleorg+randomtext@googlemail.com
+E.x.a.m.p.l.e.o.r.g@gmail.com
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;With this trick you can use same email address for work/personal/other category stuff&lt;/p&gt;
+
+&lt;p&gt;You can set email id as&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Example.org@gmail.com&lt;/code&gt; for &lt;strong&gt;work&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Exampleorg@gmail.com&lt;/code&gt; for &lt;strong&gt;personal&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Exampleorg+othercategory@gmail.com&lt;/code&gt; for &lt;strong&gt;other&lt;/strong&gt; category&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;This will help to filter/block incoming email using specified recipient email address.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+        <pubDate>Sun, 04 Sep 2016 00:00:00 +0530</pubDate>
+        <link>http://yogendra689.github.io/tricks/2016/09/04/one-gmail-id-trick.html</link>
+        <guid isPermaLink="true">http://yogendra689.github.io/tricks/2016/09/04/one-gmail-id-trick.html</guid>
+        
+        
+        <category>tricks</category>
+        
+      </item>
+    
+  </channel>
+</rss>
